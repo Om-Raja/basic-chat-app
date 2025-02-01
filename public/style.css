@@ -1,0 +1,32 @@
+body{
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0 20px;
+}
+h5{
+    /* background-color: rgb(176, 130, 219); */
+    display: inline;
+    color:#322828;
+    font-weight:100;
+    border-radius: 20px;
+    padding: 1px 3px;
+}
+.chat{
+    background-color: cadetblue;
+    margin-left: 4%;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid rgb(140, 106, 171);
+    border-radius: 20px;
+}
+.message{
+    background-color: rgb(77, 223, 118);
+    color:#000000;
+    padding: 2px;
+    border-radius: 8px;
+    margin-top: 4px;
+    font-family: cursive;
+}
+sub{
+    color:rgb(60, 60, 60);
+}

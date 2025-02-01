@@ -67,6 +67,7 @@ let allChats = [
     createdAt: new Date(),
   },
 ];
+
 //insert many - it will return a promise
 Chat.insertMany(allChats)
   .then((res) => {

@@ -41,6 +41,25 @@ app.get("/chats", async (req, res) => {
   res.render("index.ejs", {chats});
 });
 
+app.get("/chats/new",(req, res)=>{
+  res.render("newChat.ejs");
+});
+app.post("/chats",(req,res)=>{
+  const {from, to, message} = req.body;
+  const newChat = new Chat({
+    from: from,
+    to: to,
+    message: message,
+    createdAt: new Date(),
+  });
+  newChat.save().then((res)=>{
+    console.log(res);
+  }).catch((err)=>{
+    console.log(err);
+  });
+  res.redirect("/chats");
+});
+
 //server
 app.listen(3000, () => {
   console.log("Listening at 3000");
