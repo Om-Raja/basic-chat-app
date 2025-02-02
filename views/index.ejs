@@ -30,9 +30,9 @@
         <a class="edit-btn" href="/chats/edit/<%=chat._id%>"
           ><i class="fa-solid fa-pencil"></i
         ></a>
-        <form style="display: inline;" method="post" action="/chats/<%=chat._id%>?_method=DELETE">
-            <button class="delete-btn"><i class="fa-solid fa-trash-can"></i></button>
-        </form>
+        <button class="delete-btn" data-chat-id="<%=chat._id%>">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
       </div>
 
       <div class="date">
@@ -45,5 +45,7 @@
     </div>
     <hr />
     <% } %>
+
+    <script src="/app.js"></script>
   </body>
 </html>
