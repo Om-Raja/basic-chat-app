@@ -71,6 +71,13 @@ app.put("/chats/:id", async (req, res)=>{
   res.redirect("/chats");
 });
 
+//destroy route
+app.delete("/chats/:id", async (req, res)=>{
+  const {id} = req.params;
+  await Chat.findByIdAndDelete(id);
+  res.redirect("/chats");
+});
+
 //server
 app.listen(3000, () => {
   console.log("Listening at 3000");
