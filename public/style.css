@@ -24,9 +24,25 @@ h5{
     color:#000000;
     padding: 2px;
     border-radius: 8px;
-    margin-top: 4px;
+    margin: 4px 0px;
     font-family: cursive;
 }
 sub{
     color:rgb(60, 60, 60);
+}
+.date{
+    display: flex;
+    justify-content: space-between;
+}
+input{
+    border-radius: 20px;
+    margin: 5px 0px;
+    padding: 4px 8px;
+}
+button{
+    border: 2px solid rgb(38, 151, 38);
+    border-radius: 8px;
+    padding: 2px 4px;
+    font-size: 1.2rem;
+    background-color: rgb(52, 251, 52);
 }

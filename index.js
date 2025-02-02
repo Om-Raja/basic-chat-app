@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat");
+const methodOverride =require("method-override");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.set("views", path.join(__dirname, "/views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(methodOverride("_method"));
 
 // CONNECTION
 async function main() {
@@ -35,9 +37,7 @@ app.get("/", (req, res)=>{
 
 //APIs
 app.get("/chats", async (req, res) => {
-  console.log("started");
   let chats = await Chat.find();
-  console.log(chats);
   res.render("index.ejs", {chats});
 });
 
@@ -52,11 +52,22 @@ app.post("/chats",(req,res)=>{
     message: message,
     createdAt: new Date(),
   });
-  newChat.save().then((res)=>{
-    console.log(res);
-  }).catch((err)=>{
+  newChat.save().catch((err)=>{
     console.log(err);
   });
+  res.redirect("/chats");
+});
+
+//update
+app.get("/chats/edit/:id", async (req, res)=>{
+  const {id}= req.params;
+  let chat = await Chat.findById(id);
+  res.render("edit.ejs", {chat});
+});
+app.put("/chats/:id", async (req, res)=>{
+  const {id} = req.params;
+  const {editedMessage} = req.body;
+  await Chat.findByIdAndUpdate(id, {message: editedMessage}, {runValidators: true, new: true});
   res.redirect("/chats");
 });
 

@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat app</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
     <h1>Chats💬</h1>
     <a href="/chats/new" id="add-new-chat-btn">Add a new chat</a>
-    <hr>
+    <hr />
     <% for(chat of chats) { %>
-        <div class="chat">
-            <h5><i class="fa-regular fa-user"></i> <%=chat.from%> &rarr; <i class="fa-solid fa-user"></i> <%=chat.to%></h5>
-            <div class="message"><%= chat.message%></div>
-            <sub><%=chat.createdAt%></sub>
-        </div>
-        <hr/>
+    <div class="chat">
+      <h5>
+        <i class="fa-regular fa-user"></i> <%=chat.from%> &rarr;
+        <i class="fa-solid fa-user"></i> <%=chat.to%>
+      </h5>
+      <div class="message">
+        <%= chat.message%>
+        <a href="/chats/edit/<%=chat._id%>"
+          ><i class="fa-solid fa-pencil"></i
+        ></a>
+      </div>
+
+      <div class="date">
+        <sub><%=chat.createdAt.toString().split(" ")[4]%></sub>
+        <sub
+          ><%= chat.createdAt.toString().split(" ").slice(0, 4).join(" ")
+          %></sub
+        >
+      </div>
+    </div>
+    <hr />
     <% } %>
-</body>
+  </body>
 </html>
