@@ -1,6 +1,10 @@
 # <font color="green">Chat💬</font>
-Day-40
-[Notes](https://docs.google.com/document/d/15MaUloiWlcN8Cvozr6Sxsb3WzWl3Fqv9/edit?usp=drive_link&ouid=115259898732327540831&rtpof=true&sd=true)
+Day-40 &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
+[Notes](https://docs.google.com/document/d/15MaUloiWlcN8Cvozr6Sxsb3WzWl3Fqv9/edit?usp=drive_link&ouid=115259898732327540831&rtpof=true&sd=true) &nbsp;&nbsp;&nbsp;|  &nbsp;&nbsp;&nbsp;
+[LinkedIn post](https://www.linkedin.com/posts/om-raja_another-backend-project-but-with-involvement-activity-7292155761730666496-paVG?utm_source=social_share_send&utm_medium=member_desktop_web)
+
+![App view](<Screenshot 2025-02-03 170344.png>)
+
 
 ## 1. How to set min length for string in mogoose schema validation?
 To set a minimum length for a string field in a Mongoose schema, use the `minlength` option when defining the string type; for example, `type: String, minlength: 5` would enforce that the string must be at least 5 characters long.
