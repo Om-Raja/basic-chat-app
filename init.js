@@ -17,14 +17,17 @@ main()
   });
 
 //creating a document
+/*
 const chat1 = new Chat({
   to: "Niku",
   from: "Om",
   message: "How are you ma'am?",
   createdAt: new Date(), //generated random date
 });
+*/
 
-//saving
+//saving 
+/*
 chat1
   .save()
   .then((result) => {
@@ -32,12 +35,25 @@ chat1
   })
   .catch((err) => {
     console.log(err.errors);
-  });
+  }); 
+*/
 
 //array of chats
 let allChats = [
   {
-    from: "Niku",
+    from: "Swati Agarwal",
+    to: "Nidhi Tripathi",
+    message: "Tera birthday surprise ready hai, bas tujhe surprise hone ka wait hai!",
+    createdAt: new Date(),
+  },
+  {
+    from: "Rajesh Yadav",
+    to: "Sandeep Chauhan",
+    message: "Kal gym chalein kya? Motivation ki zaroorat hai!",
+    createdAt: new Date(),
+  },
+  {
+    from: "Nikita",
     to: "Om",
     message: "You are good preson",
     createdAt: new Date(),
@@ -50,12 +66,12 @@ let allChats = [
   },
   {
     from: "Kashish",
-    to: "Niku",
+    to: "Nikita",
     message: "Kaisi ho Nikita?",
     createdAt: new Date(),
   },
   {
-    from: "Niku",
+    from: "Nikita",
     to: "Kashish",
     message: "Thik hoon Behen. Tum kaisi ho?",
     createdAt: new Date(),
